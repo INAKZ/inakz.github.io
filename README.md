@@ -1,5 +1,4 @@
 # inakz.github.io
-ぺーじ
 https://inakz.github.io/
 
 中の人はgithubもhtmlもその他あらゆる事柄についての知識も無いのでsnsなりマシュマロなりで助言をくれると助かります。
