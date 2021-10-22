@@ -1,4 +1,4 @@
-//"use strict";
+"use strict";
 
 //ドライブのURL変換
 function url_convert(){
@@ -10,10 +10,10 @@ function url_convert(){
 	target.href = "";
 	
 	urlTmp = urlInput.split('/');
-	if(urlTmp[0] == "https:" && urlTmp[2] == "drive.google.com"){
+	if(urlTmp[5] != undefined && urlTmp[2] == "drive.google.com"){
 		urlOutput = "https://drive.google.com/uc?id=" + urlTmp[5] + "&export=download";
 		target.href = (urlOutput);
-	} else if(urlTmp[0] != "https:"){
+	} else if(urlTmp[0] != "https:" && urlTmp[0] != "http:"){
 		urlOutput = "";
 	} else {
 		urlOutput = "Error:URLがGoogleDriveのものではないか、仕様変更で使えません。";
