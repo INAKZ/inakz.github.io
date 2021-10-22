@@ -12,18 +12,30 @@
 	
 	<body>
 		<h1>いなつーる</h1>
-			<p>気分で更新しますが使用したことで発生したいかなる不都合も当方は責任を負いかねます</p>
-		<h2>Google Driveの共有URLを直接DLできるURLに変換するツール</h2>
+			<p>使用したことで発生したいかなる不都合も当方は責任を負いかねます</p>
+			<p>不具合を見つけたときは<a href="https://twitter.com/INAKZgrepe">Twitter</a>とかに連絡してくれると修正するかもしれません</p>
+			
+		<h2>URL変換ツール</h2>
 			<p>ネット上には同様のツールがありますがドライブの仕様変更で使えなくなってたり面倒だったりしたのでつくりました</p>
 			<h3>使い方</h3>
-				<p>上の欄に共有URLを入れる</p>
+				<ul>
+					<li>モードを選択</li>
+					<li>上の欄に共有URLを入れる</li>
+					<li>下の欄に出力されるURLをコピペするなり下のハイパーリンクから飛ぶなりご自由に</li>
+				</ul>
 			<noscript><p><em>JavaScriptを有効にしてください。</em></p></noscript>
 			
-			<form name="url_form" action="#">
-				<p>入力：<input type="url" name="url_in" size="90" onkeyup="url_convert();" onmouseup="url_convert();"></p>
-				<p>出力：<input type="text" name="url_out" size="90" readonly></p>
-				<p><a id="url_converted" href="">出力されたURL</a></p>
+			<p>モード：<select name="mode" id="url_mode" onkeyup="url_convert();" onmouseup="url_convert();"></p>
+				<option value='1' selected>Google Driveの共有URLを直接DLできるURLに変換</option>
+				<option value='2'>Youtube -> Piped</option>
+				<option value='3'>Twitter -> nitter</option>
+			</select>
+			<form name="url_form">
+				<p>入力：<input type="url" name="url_in" size="128" onkeyup="url_convert();" onmouseup="url_convert();"></p>
+				<p>出力：<input type="text" name="url_out" size="128" readonly></p>
+				<p><a id="url_converted" href="" target="_blank">出力されたURL(別タブ)</a></p>
 			</form>
+			
 
 		<footer>
 			<p><a href="index.html">戻る</a></p>
