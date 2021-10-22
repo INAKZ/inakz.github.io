@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" cantent="いなくーず">
+		<meta name="author" cantent="INAKZ">
+		<meta property="og:title" content="いなくーず・こあ"/>
+		<title>いなつーる - いなくーず・こあ</title>
+		<link rel="stylesheet" href="css/style.css">
+		
+		<script type="text/JavaScript" src="./script/drive.js"></script>
+	</head>
+	
+	<body>
+		<h1>Google Driveの共有URLを直接DLできるURLに変換するツール</h1>
+			<h3>使い方</h3>
+				<p>上の欄に共有URLを入れる</p>
+			<noscript><p><em>JavaScriptを有効にしてください。</em></p></noscript>
+			
+			<form name="url_form" action="#">
+				<p>入力：<input type="url" name="url_in" onkeyup="url_convert();" onmouseup="url_convert();"></p>
+				<p>出力：<input type="url" name="url_out" readonly></p>
+				<p><a id="url_converted" href="">出力されたリンク先</a></p>
+			</form>
+
+		<footer>
+			<p><a href="index.html">戻る</a></p>
+		</footer>
+	</body>
+</html>
