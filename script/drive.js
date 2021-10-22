@@ -10,14 +10,15 @@ function url_convert(){
 	target.href = "";
 	
 	urlTmp = urlInput.split('/');
-	if(urlTmp[5] != undefined && urlTmp[2] == "drive.google.com"){
+	if(urlTmp[6] != undefined && urlTmp[2] == "drive.google.com"){
+		//urlTmp[6]がundefined -> URLが不完全（別になくてもいいけど…）
 		urlOutput = "https://drive.google.com/uc?id=" + urlTmp[5] + "&export=download";
 		target.href = (urlOutput);
 	} else if(urlTmp[0] != "https:" && urlTmp[0] != "http:"){
 		//URLじゃないとき（入力途中にしゃしゃり出てきて目障りなのを軽減）
 		urlOutput = "";
 	} else {
-		urlOutput = "Error:URLがGoogleDriveのものではないか、仕様変更で使えません。";
+		urlOutput = "Error:URLが不完全、または仕様変更により使えません。";
 	}
 	document.url_form.url_out.value = (urlOutput);
 }
