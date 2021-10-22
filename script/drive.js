@@ -14,6 +14,7 @@ function url_convert(){
 		urlOutput = "https://drive.google.com/uc?id=" + urlTmp[5] + "&export=download";
 		target.href = (urlOutput);
 	} else if(urlTmp[0] != "https:" && urlTmp[0] != "http:"){
+		//URLじゃないとき（入力途中にしゃしゃり出てきて目障りなのを軽減）
 		urlOutput = "";
 	} else {
 		urlOutput = "Error:URLがGoogleDriveのものではないか、仕様変更で使えません。";
