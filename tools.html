@@ -1,16 +1,18 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="author" cantent="いなくーず">
-		<meta name="author" cantent="INAKZ">
 		<title>いなつーる - いなくーず・こあ</title>
+		<meta charset="UTF-8">
+		<meta name="author" content="いなくーず">
+		<meta property="og:site_name" content="いなくーず・こあ">
+		<meta property="og:url" content="https://inakz.github.io">
+		<meta property="og:image" content="./img/ogimg.jpg">
 		<link href="./css/style.css" rel="stylesheet" type="text/css">
 		
 		<script type="text/JavaScript" src="./script/drive.js"></script>
 	</head>
 	
-	<body>
+	<body class="noscrollbarx">
 		<header>
 			<h1>いなつーる</h1>
 			<p>使用したことで発生したいかなる不都合も当方は責任を負いかねます</p>
@@ -26,14 +28,14 @@
 		</ul>
 		<noscript><p><em>JavaScriptを有効にしてください。</em></p></noscript>
 			
-		<p>モード：<select name="mode" id="url_mode" onkeyup="url_convert();" onmouseup="url_convert();"></p>
+		<p>モード：<select id="url_mode" name="mode" onkeyup="url_convert();" onmouseup="url_convert();"></p>
 			<option value='1' selected>Google Driveの共有URLを直接DLできるURLに変換</option>
 			<option value='2'>Youtube -> Piped</option>
 			<option value='3'>Twitter -> nitter</option>
 		</select>
 		<form name="url_form">
-			<p>入力：<input type="url" name="url_in" size="128" onkeyup="url_convert();" onmouseup="url_convert();"></p>
-			<p>出力：<input type="text" name="url_out" size="128" readonly></p>
+			<p>入力：<input name="url_in" type="url" size="128" onkeyup="url_convert();" onmouseup="url_convert();"></p>
+			<p>出力：<input name="url_out" type="text" size="128" readonly></p>
 			<p><a id="url_converted" href="" target="_blank">出力されたURL(別タブ)</a></p>
 		</form>
 	</body>

@@ -30,7 +30,7 @@ function url_convert(){
 			break;
 		case '2':
 			//youtube->piped
-			if(urlTmp[3] != undefined && urlTmp[2] == "www.youtube.com"){
+			if(urlTmp[3] != undefined && (urlTmp[2] == "www.youtube.com" || urlTmp[2] == "youtu.be")){
 				urlOutput = "https://piped.kavin.rocks/" + urlTmp[3];
 				for(let i = 4; i < 30; i++){
 					//チャンネル・プレイリスト用

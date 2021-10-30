@@ -1,20 +1,28 @@
 ﻿<!DOCTYPE html>
-<html lang="ja" class="nomargin">
+<html lang="ja">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="author" cantent="いなくーず">
-		<meta name="author" cantent="INAKZ">
 		<title>いなくーず・こあ</title>
+		<meta charset="UTF-8">
+		<meta name="author" content="いなくーず">
+		<meta property="og:site_name" content="いなくーず・こあ">
+		<meta property="og:url" content="https://inakz.github.io">
+		<meta property="og:image" content="./img/ogimg.jpg">
 		<link href="./css/style.css" rel="stylesheet" type="text/css">
+		
+		<meta property="og:type" content="website">
+		<meta name="keywords" content="いなくーず,INAKZ">
+		<meta name="description" content="いなくーずって人のサイトです。">
+		<meta name="theme-color" content="#010477">
+		<a href="https://pawoo.net/@INAKZgrepe" rel="me"></a>
 	</head>
 	
-	<body class="nomargin">
+	<body class="nomargin noscrollbar">
 		<div id="main">
-			<iframe src="./menu.html" id="menu" name="menubar">
+			<iframe id="menu" name="menubar" src="./menu.html"></iframe>
+			<iframe id="contents" name="display" src="./top.html">
 				インラインフレームを使用しています。
-				<a href="menu.html">表示されない場合はここをクリック</a>
+				<a href="./menu.html">正常に表示されない場合はここをクリック</a>
 			</iframe>
-			<iframe src="./top.html" id="contents" name="display"></iframe>
 		</div>
 	</body>
 </html>
