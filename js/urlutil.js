@@ -60,7 +60,7 @@ function UrlConvert(){
 			}
 			break;
 		case M_INV:
-			if(urlTmp[3] != undefined && (urlTmp[2] == "www.youtube.com" || urlTmp[2] == "youtu.be")){
+		if(urlTmp[3] != undefined && (urlTmp[2] == "www.youtube.com" || urlTmp[2] == "youtu.be" || urlTmp[2] == "piped.kavin.rocks")){
 				urlOutput = "https://" + invIns[Math.floor(Math.random() * invIns.length)] + '/' + urlTmp[3];
 				for(let i = 4; i < 30; i++){
 					//チャンネル・プレイリスト用
@@ -76,7 +76,7 @@ function UrlConvert(){
 			break;
 		case M_NIT:
 			//twitter->nitter
-			if(urlTmp[3] != undefined && urlTmp[2] == "twitter.com"){
+			if(urlTmp[3] != undefined && (urlTmp[2] == "twitter.com" || urlTmp[2] == "nitter.net")){
 				urlOutput = "https://nitter.net/" + urlTmp[3];
 				for(let i = 4; i < 30; i++){
 					if(urlTmp[i] == undefined){break;}
@@ -90,7 +90,7 @@ function UrlConvert(){
 			}
 			break;
 		case M_NITS:
-			if(urlTmp[3] != undefined && urlTmp[2] == "twitter.com"){
+		if(urlTmp[3] != undefined && (urlTmp[2] == "twitter.com" || urlTmp[2] == "nitter.net")){
 				urlOutput = "https://" + nitIns[Math.floor(Math.random() * nitIns.length)] + '/' + urlTmp[3];
 				for(let i = 4; i < 30; i++){
 					if(urlTmp[i] == undefined){break;}
