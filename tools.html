@@ -18,7 +18,7 @@
 			<p>使用したことで発生したいかなる不都合も当方は責任を負いかねます</p>
 			<p>不具合を見つけたときは<a href="https://twitter.com/INAKZgrepe">Twitter</a>とかに連絡してくれると修正するかもしれません</p>	
 		</header>
-		<h2><a href="https://github.com/INAKZ/iBMSONview">iBMSONview</a></h2>
+		<h2><a href="https://github.com/INAKZ/iBMSONview" target="_blank">iBMSONview</a></h2>
 		<p>現在開発中のbmsonビューワ　多分5億年後とかに完成します</p>
 		<h2>URL変換ツール</h2>
 		<p>ネット上には同様のツールがあったりなかったりしますが仕様変更で使えなくなってたり面倒だったりしたのでつくりました</p>
@@ -33,7 +33,9 @@
 		<p>モード：<select id="url_mode" name="mode" onkeyup="url_convert();" onmouseup="url_convert();"></p>
 			<option value='1' selected>Google Driveの共有URLを直接DLできるURLに変換</option>
 			<option value='2'>Youtube -> Piped</option>
-			<option value='3'>Twitter -> nitter</option>
+			<option value='3'>Youtube -> Invidious(Random Instances)</option>
+			<option value='4'>Twitter -> nitter</option>
+			<option value='5'>Twitter -> nitter(Random Instances)</option>
 		</select>
 		<form name="url_form">
 			<p>入力：<input name="url_in" type="url" size="128" onkeyup="url_convert();" onmouseup="url_convert();"></p>

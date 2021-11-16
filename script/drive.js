@@ -2,6 +2,9 @@
 
 //URL変換
 function url_convert(){
+	const M_GEN = '0', M_DRI = '1', M_PIP = '2', M_INV = '3', M_NIT = '4', M_NITS = '5';
+	const invIns = ["invidious.namazso.eu", "invidio.xamh.de", "vid.puffyan.us", "youtube.076.ne.jp", "yewtu.be", "invidious-us.kavin.rocks", "inv.riverside.rocks", "vid.mint.lgbt", "invidious-jp.kavin.rocks", "invidious.snopyta.org", "invidious.kavin.rocks", "yt.artemislena.eu", "invidious.osi.kr"];
+	const nitIns = ["nitter.net", "nitter.42l.fr", "nitter.pussthecat.org", "nitter.nixnet.services", "nitter.fdn.fr", "nitter.1d4.us", "nitter.kavin.rocks", "nitter.vxempire.xyz", "nitter.unixfox.eu", "nitter.unixfox.eu", "nitter.eu", "nitter.namazso.eu", "nitter.mailstation.de", "nitter.actionsack.com", "birdsite.xanny.family", "nitter.hu", "nitter.exonip.de", "twitr.gq", "nitter.moomoo.me", "bird.trom.tf", "nitter.it", "twitter.censors.us", "nitter.grimneko.de", "nitter.koyu.space", "nitter.alefvanoon.xyz", "nitter.ir", "nitter.autarkic.org", "n.0x0.st", "n.hyperborea.cloud", "nitter.ca", "twitter.076.ne.jp", "lu-nitter.resolv.ee", "is-nitter.resolv.ee", "cy-nitter.resolv.ee", "nitter.mstdn.social", "nitter.fly.dev", "notabird.site", "nitter-jp.kavin.rocks"];
 	let urlInput, urlOutput, urlTmp, target, mode;
 	urlInput = Function("return document.url_form.url_in.value;")();
 	target = document.getElementById('url_mode');
@@ -12,10 +15,10 @@ function url_convert(){
 	urlOutput = "";
 	urlTmp = urlInput.split('/');
 	switch(mode){
-		case '0':
+		case M_GEN:
 			//一般的なモードにする予定　予定は未定
 			break;
-		case '1':
+		case M_DRI:
 			//Google Drive
 			if(urlTmp[6] != undefined && urlTmp[2] == "drive.google.com"){
 				//urlTmp[6]がundefined -> URLが不完全（別になくてもいいけど…）
@@ -28,7 +31,7 @@ function url_convert(){
 				urlOutput = "Error:URLが不正であるかまたは仕様変更により使えません";
 			}
 			break;
-		case '2':
+		case M_PIP:
 			//youtube->piped
 			if(urlTmp[3] != undefined && (urlTmp[2] == "www.youtube.com" || urlTmp[2] == "youtu.be")){
 				urlOutput = "https://piped.kavin.rocks/" + urlTmp[3];
@@ -44,10 +47,39 @@ function url_convert(){
 				urlOutput = "Error:URLが不正であるかまたは仕様変更により使えません";
 			}
 			break;
-		case '3':
+		case M_INV:
+			if(urlTmp[3] != undefined && (urlTmp[2] == "www.youtube.com" || urlTmp[2] == "youtu.be")){
+				urlOutput = "https://" + invIns[Math.floor(Math.random() * invIns.length)] + '/' + urlTmp[3];
+				for(let i = 4; i < 30; i++){
+					//チャンネル・プレイリスト用
+					if(urlTmp[i] == undefined){break;}
+					urlOutput = urlOutput + '/' + urlTmp[i];
+				}
+				target.href = (urlOutput);
+			} else if(urlTmp[0] != "https:" && urlTmp[0] != "http:"){
+				urlOutput = "";
+			} else {
+				urlOutput = "Error:URLが不正であるかまたは仕様変更により使えません";
+			}
+			break;
+		case M_NIT:
 			//twitter->nitter
 			if(urlTmp[3] != undefined && urlTmp[2] == "twitter.com"){
 				urlOutput = "https://nitter.net/" + urlTmp[3];
+				for(let i = 4; i < 30; i++){
+					if(urlTmp[i] == undefined){break;}
+					urlOutput = urlOutput + '/' + urlTmp[i];
+				}
+				target.href = (urlOutput);
+			} else if(urlTmp[0] != "https:" && urlTmp[0] != "http:"){
+				urlOutput = "";
+			} else {
+				urlOutput = "Error:URLが不正であるかまたは仕様変更により使えません";
+			}
+			break;
+		case M_NITS:
+			if(urlTmp[3] != undefined && urlTmp[2] == "twitter.com"){
+				urlOutput = "https://" + nitIns[Math.floor(Math.random() * nitIns.length)] + '/' + urlTmp[3];
 				for(let i = 4; i < 30; i++){
 					if(urlTmp[i] == undefined){break;}
 					urlOutput = urlOutput + '/' + urlTmp[i];
