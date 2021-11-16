@@ -9,7 +9,7 @@
 		<meta property="og:image" content="./img/ogimg.jpg">
 		<link href="./css/style.css" rel="stylesheet" type="text/css">
 		
-		<script type="text/JavaScript" src="./script/drive.js"></script>
+		<script type="text/JavaScript" src="./js/urlutil.js"></script>
 	</head>
 	
 	<body class="noscrollbarx">
@@ -25,12 +25,13 @@
 		<h3>使い方</h3>
 		<ul>
 			<li>モードを選択</li>
-			<li>上の欄に共有URLを入れる</li>
-			<li>下の欄に出力されるURLをコピペするなり下のハイパーリンクから飛ぶなりご自由に</li>
+			<li>"入力"欄に共有URLを入れる</li>
+			<li>"出力"欄をクリックしてURLをコピペするなり下のハイパーリンクから飛ぶなりご自由に</li>
+			<li>ランダムURLは"モード"ドロップダウンメニュー上でカーソルを動かすとめっちゃ再生成されます</li>
 		</ul>
 		<noscript><p><em>JavaScriptを有効にしてください。</em></p></noscript>
 			
-		<p>モード：<select id="url_mode" name="mode" onkeyup="url_convert();" onmouseup="url_convert();"></p>
+		<p>モード：<select id="url_mode" name="mode" onmousemove="UrlConvert();" onmousedown="UrlConvert();"></p>
 			<option value='1' selected>Google Driveの共有URLを直接DLできるURLに変換</option>
 			<option value='2'>Youtube -> Piped</option>
 			<option value='3'>Youtube -> Invidious(Random Instances)</option>
@@ -38,8 +39,8 @@
 			<option value='5'>Twitter -> nitter(Random Instances)</option>
 		</select>
 		<form name="url_form">
-			<p>入力：<input name="url_in" type="url" size="128" onkeyup="url_convert();" onmouseup="url_convert();"></p>
-			<p>出力：<input name="url_out" type="text" size="128" readonly></p>
+			<p>入力：<input name="url_in" type="url" size="128" onkeyup="UrlConvert();" onmousedown="UrlConvert();"></p>
+			<p>出力：<input name="url_out" type="text" size="128" onmousedown="CopyToClipboard();" readonly></p>
 			<p><a id="url_converted" href="" target="_blank">出力されたURL(別タブ)</a></p>
 		</form>
 	</body>
