@@ -5,6 +5,10 @@ html{
 	font-family: 'Yusei Magic', 'Roboto', "游ゴシック体", sans-serif;
 }
 
+li, br{
+	margin: 5px 0;
+}
+
 .nomargin{
 	margin: 0;
 	padding: 0;
