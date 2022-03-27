@@ -1,12 +1,15 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
 	<head>
-		<title>いなつーる - いなくーず・こあ</title>
 		<meta charset="UTF-8">
+		<title>いなつーる - いなくーず・こあ</title>
 		<meta name="author" content="いなくーず">
 		<meta property="og:site_name" content="いなくーず・こあ">
 		<meta property="og:url" content="https://inakz.github.io">
 		<meta property="og:image" content="./img/ogimg.jpg">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Yusei+Magic&display=swap" rel="stylesheet">
 		<link href="./css/style.css" rel="stylesheet" type="text/css">
 		
 		<script type="text/JavaScript" src="./js/urlutil.js"></script>
@@ -29,7 +32,7 @@
 			<li>"出力"欄をクリックしてURLをコピペするなり下のハイパーリンクから飛ぶなりご自由に</li>
 			<li>ランダムURLは"モード"ドロップダウンメニュー上でカーソルを動かすとめっちゃ再生成されます</li>
 		</ul>
-		<noscript><p><em>JavaScriptを有効にしてください。</em></p></noscript>
+		<noscript><p><em>JavaScriptが有効でないため動作しません。</em></p></noscript>
 			
 		<p>モード：<select id="url_mode" name="mode" onmousemove="UrlConvert();" onmousedown="UrlConvert();"></p>
 			<option value='1' selected>Google Driveの共有URLを直接DLできるURLに変換</option>
@@ -39,7 +42,7 @@
 			<option value='5'>Twitter -> nitter(Random Instances)</option>
 		</select>
 		<form name="url_form">
-			<p>入力：<input name="url_in" type="url" size="128" onkeyup="UrlConvert();" onmousedown="UrlConvert();"></p>
+			<p>入力：<input name="url_in" type="url" size="128" onkeyup="UrlConvert();" onmousedown="UrlConvert();" onclick="SelectInput()"></p>
 			<p>出力：<input name="url_out" type="text" size="128" onmousedown="CopyToClipboard();" readonly></p>
 			<p><a id="url_converted" href="" target="_blank">出力されたURL(別タブ)</a></p>
 		</form>

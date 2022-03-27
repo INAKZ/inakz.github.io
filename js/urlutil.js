@@ -1,8 +1,15 @@
 "use strict";
 
+//入力欄の選択
+function SelectInput(){
+	document.url_form.url_in.select();
+}
+
 //出力をクリップボードにコピー
 function CopyToClipboard(){
+	//Functionでevalの代用
 	let target = Function("return document.url_form.url_out.value;")();
+	//ClipboardAPIを使用
 	navigator.clipboard.writeText(target).then(function() {
 		//成功したら選択
 		document.url_form.url_out.select();
@@ -15,6 +22,7 @@ function CopyToClipboard(){
 //URL変換
 function UrlConvert(){
 	const M_GEN = '0', M_DRI = '1', M_PIP = '2', M_INV = '3', M_NIT = '4', M_NITS = '5';
+	const tubDom = ["www.youtube.com", "youtu.be", "m.youtube.com"];
 	const invIns = ["invidious.namazso.eu", "invidio.xamh.de", "vid.puffyan.us", "youtube.076.ne.jp", "yewtu.be", "invidious-us.kavin.rocks", "inv.riverside.rocks", "vid.mint.lgbt", "invidious-jp.kavin.rocks", "invidious.snopyta.org", "invidious.kavin.rocks", "yt.artemislena.eu", "invidious.osi.kr"];
 	const nitIns = ["nitter.net", "nitter.42l.fr", "nitter.pussthecat.org", "nitter.nixnet.services", "nitter.fdn.fr", "nitter.1d4.us", "nitter.kavin.rocks", "nitter.vxempire.xyz", "nitter.unixfox.eu", "nitter.unixfox.eu", "nitter.eu", "nitter.namazso.eu", "nitter.mailstation.de", "nitter.actionsack.com", "birdsite.xanny.family", "nitter.hu", "nitter.exonip.de", "twitr.gq", "nitter.moomoo.me", "bird.trom.tf", "nitter.it", "twitter.censors.us", "nitter.grimneko.de", "nitter.koyu.space", "nitter.alefvanoon.xyz", "nitter.ir", "nitter.autarkic.org", "n.0x0.st", "n.hyperborea.cloud", "nitter.ca", "twitter.076.ne.jp", "lu-nitter.resolv.ee", "is-nitter.resolv.ee", "cy-nitter.resolv.ee", "nitter.mstdn.social", "nitter.fly.dev", "notabird.site", "nitter-jp.kavin.rocks"];
 	let urlInput, urlOutput, urlTmp, target, mode;
@@ -46,6 +54,11 @@ function UrlConvert(){
 		case M_PIP:
 			//youtube->piped
 			if(urlTmp[3] != undefined && (urlTmp[2] == "www.youtube.com" || urlTmp[2] == "youtu.be")){
+				for(let i = 0; i < tubDom.length; i++){
+					if(urlTmp[2] == tubDom[i]){
+						
+					}
+				}
 				urlOutput = "https://piped.kavin.rocks/" + urlTmp[3];
 				for(let i = 4; i < 30; i++){
 					//チャンネル・プレイリスト用
